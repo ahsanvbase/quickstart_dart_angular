@@ -1,33 +1,24 @@
 import 'package:angular/angular.dart';
-import 'package:angular_forms/angular_forms.dart';
-import 'src/hero.dart';
-import 'src/mock_heroes.dart';
-import 'src/hero_detail_component.dart';
+import 'src/dashboard_component.dart';
+import 'src/heroes_component.dart';
 import 'src/hero_service.dart';
-
+import 'src/hero_detail_component.dart';
+import 'package:angular_router/angular_router.dart';
 
 @Component(
   selector: 'my-app',
-  directives: const [CORE_DIRECTIVES, formDirectives, HeroDetailComponent],
-  templateUrl: 'app_component.html',
-  styleUrls: const ['app_component.css'],
+  templateUrl: "app_component.html",
+  directives: const [ROUTER_DIRECTIVES],
   providers: const [HeroService],
 )
 
-class AppComponent implements OnInit {
-  final HeroService _heroService;
-  final title = 'Tour Of Heros';
-  List<Hero> heroes;
-  Hero selectedHero;
+@RouteConfig(const [
+  const Route(path: '/heroes', name: 'Heroes', component: HeroesComponent),
+  const Route(path: '/dashboard', name: 'Dashboard', component: DashboardComponent),
+  const Redirect(path: '/', redirectTo: const ['Dashboard']),
+  const Route(path: '/detail/:id',name: 'HeroDetail',component: HeroDetailComponent,),
+])
 
-  AppComponent(this._heroService);
-
-  Future<Null> getHeroes() async {
-    heroes = await _heroService.getHeroes();
-  }
-
-  void ngOnInit() => getHeroes();
-
-  void onSelect(Hero hero) => selectedHero = hero;
-  String name = 'ahsan';
+class AppComponent {
+  final title = 'Tour of Heroes';
 }
