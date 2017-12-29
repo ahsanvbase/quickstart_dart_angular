@@ -1,10 +1,10 @@
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
 import 'hero.dart';
-import 'mock_heroes.dart';
 import 'hero_detail_component.dart';
 import 'hero_service.dart';
 import 'package:angular_router/angular_router.dart';
+import 'dart:async';
 
 
 @Component(
@@ -14,7 +14,6 @@ import 'package:angular_router/angular_router.dart';
   styleUrls: const ['heroes_component.css'],
   providers: const [HeroService],
   pipes: const [COMMON_PIPES],
-
 )
 
 class HeroesComponent implements OnInit {

@@ -8,6 +8,7 @@ import 'package:angular_router/angular_router.dart';
 @Component(
   selector: 'my-app',
   templateUrl: "app_component.html",
+  styleUrls: const['app_component.css'],
   directives: const [ROUTER_DIRECTIVES],
   providers: const [HeroService],
 )
