@@ -4,6 +4,7 @@ import 'hero.dart';
 import 'mock_heroes.dart';
 import 'hero_detail_component.dart';
 import 'hero_service.dart';
+import 'package:angular_router/angular_router.dart';
 
 
 @Component(
@@ -18,11 +19,15 @@ import 'hero_service.dart';
 
 class HeroesComponent implements OnInit {
   final HeroService _heroService;
+  final Router _router;
+
   final title = 'Tour Of Heros';
+  String name = 'ahsan';
+
   List<Hero> heroes;
   Hero selectedHero;
 
-  HeroesComponent(this._heroService);
+  HeroesComponent(this._heroService, this._router);
 
   Future<Null> getHeroes() async {
     heroes = await _heroService.getHeroes();
@@ -31,5 +36,9 @@ class HeroesComponent implements OnInit {
   void ngOnInit() => getHeroes();
 
   void onSelect(Hero hero) => selectedHero = hero;
-  String name = 'ahsan';
+
+  Future<Null> gotoDetail() => _router.navigate([
+    'HeroDetail',
+    {'id': selectedHero.id.toString()}
+  ]);
 }
