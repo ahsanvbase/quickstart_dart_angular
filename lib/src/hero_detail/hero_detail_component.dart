@@ -1,10 +1,9 @@
 import 'dart:async';
 import 'package:angular_router/angular_router.dart';
-import 'hero_service.dart';
-
+import 'package:angular_app/src/hero/hero_service.dart';
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
-import 'hero.dart';
+import 'package:angular_app/src/hero/hero.dart';
 
 @Component(
   selector: 'hero-detail',

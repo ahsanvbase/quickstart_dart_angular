@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 
-import 'hero.dart';
-import 'hero_service.dart';
+import 'package:angular_app/src/hero/hero.dart';
+import 'package:angular_app/src/hero/hero_service.dart';
 
 @Component(
   selector: 'my-dashboard',
