@@ -5,10 +5,11 @@ import 'package:angular/angular.dart';
 import 'package:http/http.dart';
 
 import 'hero.dart';
+import 'package:angular_app/globals.dart' as global;
 
 @Injectable()
 class HeroService {
-  static const _heroesUrl = 'http://192.168.10.179:8000/api/heroes'; // URL to web API
+  static const _heroesUrl = global.apiPath+'/heroes'; // URL to web API
 
   final Client _http;
 
