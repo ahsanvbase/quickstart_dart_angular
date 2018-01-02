@@ -5,7 +5,6 @@ import 'src/dashboard/dashboard_component.dart';
 import 'src/hero/heroes_component.dart';
 import 'src/hero/hero_service.dart';
 import 'src/hero_detail/hero_detail_component.dart';
-import 'src/users/users.dart';
 
 @Component(
   selector: 'my-app',
@@ -19,8 +18,7 @@ import 'src/users/users.dart';
   const Redirect(path: '/', redirectTo: const ['Dashboard']),
   const Route(path: '/dashboard', name: 'Dashboard', component: DashboardComponent),
   const Route(path: '/heroes', name: 'Heroes', component: HeroesComponent),
-  const Route(path: '/hero/detail/:id',name: 'HeroDetail',component: HeroDetailComponent),
-  const Route(path: '/users',name: 'Users',component: UsersComponent),
+  const Route(path: '/hero/detail/:id',name: 'HeroDetail',component: HeroDetailComponent)
 ])
 
 class AppComponent {
